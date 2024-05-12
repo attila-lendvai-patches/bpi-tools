@@ -34,7 +34,7 @@ BPIFILE="$HOME/.${BPICMD}.lst"
 #BPI-ROOT.lst
 #
 ## Hello from Google,
-## On Aug 31, 2016, we will discontinue serving content via 
+## On Aug 31, 2016, we will discontinue serving content via
 ## googledrive.com/host/[id] and the webpages will not be accessible anymore.
 #
 #BPIURL="https://googledrive.com/host/0B_YnvHgh2rwjVE10U3U0Q0NCdWM"
@@ -121,7 +121,7 @@ get_conffile() {
       if [ "x$FILE" == "x$BPICONF" ] ; then
         echo $U
         echo "OK!!\n"
-        break 
+        break
       fi
     done
   fi
@@ -428,5 +428,4 @@ if [[ $DEVICE == "" ]]; then DEVICE=$2 ; fi
 if [[ $DEVICE == "" ]]; then DEVICE="/dev/mmcblk0"; fi
 
 #step 1: main
-bpi_bootsel_main 
-
+bpi_bootsel_main

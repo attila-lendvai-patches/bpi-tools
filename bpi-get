@@ -59,7 +59,7 @@ BPIFILE="$HOME/.${BPICMD}.lst"
 #BPI-ROOT.lst
 #
 ## Hello from Google,
-## On Aug 31, 2016, we will discontinue serving content via 
+## On Aug 31, 2016, we will discontinue serving content via
 ## googledrive.com/host/[id] and the webpages will not be accessible anymore.
 #
 #BPIURL="https://googledrive.com/host/0B_YnvHgh2rwjVE10U3U0Q0NCdWM"
@@ -107,8 +107,8 @@ Options:
 
 ex:
   ${BPICMD} bpi-tools.tgz
-  ${BPICMD} bpi-tools.tgz bpi-service.tgz 
-  ${BPICMD} bpi-tools.tgz bpi-service.tgz 
+  ${BPICMD} bpi-tools.tgz bpi-service.tgz
+  ${BPICMD} bpi-tools.tgz bpi-service.tgz
   ${BPICMD} bpi-tools.tgz bpi-service.tgz brcm.tgz bpi-w2-tools.tgz
   ${BPICMD} -c bpi-m2u.conf
   ${BPICMD} -c bpi-m2p.conf
@@ -142,7 +142,7 @@ get_conffile() {
       if [ "x$FILE" == "x$BPICONF" ] ; then
         echo $U
         echo "OK!!\n"
-        break 
+        break
       fi
     done
   fi
@@ -935,7 +935,7 @@ bpi_migratefromimg() {
   release_loopdev
   #step 6: img to zip
   #cat ${IMGFILE} | pv | zip ${IMGFILE}.zip -
-  echo zip ${IMGFILE}.zip 
+  echo zip ${IMGFILE}.zip
   zip ${IMGFILE}.zip ${IMGFILE}
   #blue_led_off
   date
@@ -1040,7 +1040,7 @@ update_bpimode() {
   echo BPIMODE=${BPIMODE}
 }
 
-bpi_migrate_main() 
+bpi_migrate_main()
 {
   if [ ! -f "${BPIFILE}" ] ; then
     download_index
@@ -1087,7 +1087,7 @@ bpi_migrate_main()
   esac
 }
 
-bpi_update_on_bpi() 
+bpi_update_on_bpi()
 {
   umount_device
   P1=1
@@ -1113,7 +1113,7 @@ bpi_update_on_bpi()
   esac
 }
 
-bpi_update_on_x86() 
+bpi_update_on_x86()
 {
   umount_device
   BOOTFILES=
@@ -1142,7 +1142,7 @@ bpi_update_on_x86()
   (eject ${DEVICE}) > /dev/null 2>&1
 }
 
-bpi_update_board() 
+bpi_update_board()
 {
   case ${BOARD} in
   bpi-x86)
@@ -1154,7 +1154,7 @@ bpi_update_board()
   esac
 }
 
-bpi_update_main() 
+bpi_update_main()
 {
   if [ ! -f "${BPIFILE}" ] ; then
     download_index
@@ -1168,7 +1168,7 @@ bpi_update_main()
   bpi_update_board
 }
 
-bpi_get_main() 
+bpi_get_main()
 {
   if [ ! -f "${BPIFILE}" ] ; then
     download_index
@@ -1180,7 +1180,7 @@ bpi_get_main()
     get_all_files
   fi
   #
-  ## show usage: if no file to download 
+  ## show usage: if no file to download
   #
   if [ "x${CONFFILE}" == "x" ] && [ "x${GETFILES}" == "x" ] ; then
     usage
@@ -1199,7 +1199,7 @@ bpi_get_main()
     get_bpi_files $BPIFILES
   fi
   #
-  ## 
+  ##
   #
   if [ "x${GETFILES}" != "x" ] ; then
     get_bpi_files $GETFILES
@@ -1311,5 +1311,4 @@ shift #get rid of the '--'
 GETFILES=$*
 #echo GETFILES: $GETFILES
 #step 1: main
-bpi_get_main 
-
+bpi_get_main

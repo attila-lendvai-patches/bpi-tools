@@ -56,7 +56,7 @@ BPIFILE="$HOME/.${BPICMD}.lst"
 #BPI-ROOT.lst
 #
 ## Hello from Google,
-## On Aug 31, 2016, we will discontinue serving content via 
+## On Aug 31, 2016, we will discontinue serving content via
 ## googledrive.com/host/[id] and the webpages will not be accessible anymore.
 #
 #BPIURL="https://googledrive.com/host/0B_YnvHgh2rwjVE10U3U0Q0NCdWM"
@@ -136,7 +136,7 @@ get_conffile() {
       if [ "x$FILE" == "x$BPICONF" ] ; then
         echo $U
         echo "OK!!\n"
-        break 
+        break
       fi
     done
   fi
@@ -905,7 +905,7 @@ bpi_migratefromimg() {
   release_loopdev
   #step 6: img to zip
   #cat ${IMGFILE} | pv | zip ${IMGFILE}.zip -
-  echo zip ${IMGFILE}.zip 
+  echo zip ${IMGFILE}.zip
   zip ${IMGFILE}.zip ${IMGFILE}
   #blue_led_off
   date
@@ -1010,7 +1010,7 @@ update_bpimode() {
   echo BPIMODE=${BPIMODE}
 }
 
-bpi_migrate_main() 
+bpi_migrate_main()
 {
   if [ ! -f "${BPIFILE}" ] ; then
     download_index
@@ -1057,7 +1057,7 @@ bpi_migrate_main()
   esac
 }
 
-bpi_update_on_bpi() 
+bpi_update_on_bpi()
 {
   umount_device
   P1=1
@@ -1083,7 +1083,7 @@ bpi_update_on_bpi()
   esac
 }
 
-bpi_update_on_x86() 
+bpi_update_on_x86()
 {
   umount_device
   BOOTFILES=
@@ -1112,7 +1112,7 @@ bpi_update_on_x86()
   (eject ${DEVICE}) > /dev/null 2>&1
 }
 
-bpi_update_board() 
+bpi_update_board()
 {
   case ${BOARD} in
   bpi-x86)
@@ -1128,7 +1128,7 @@ bpi_update_board()
   esac
 }
 
-bpi_update_main() 
+bpi_update_main()
 {
   if [ ! -f "${BPIFILE}" ] ; then
     download_index
@@ -1245,5 +1245,4 @@ done
 shift #get rid of the '--'
 
 #step 1: main
-bpi_update_main 
-
+bpi_update_main

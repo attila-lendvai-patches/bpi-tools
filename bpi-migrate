@@ -68,7 +68,7 @@ BPIFILE="$HOME/.${BPICMD}.lst"
 #BPI-ROOT.lst
 #
 ## Hello from Google,
-## On Aug 31, 2016, we will discontinue serving content via 
+## On Aug 31, 2016, we will discontinue serving content via
 ## googledrive.com/host/[id] and the webpages will not be accessible anymore.
 #
 #BPIURL="https://googledrive.com/host/0B_YnvHgh2rwjVE10U3U0Q0NCdWM"
@@ -118,7 +118,7 @@ Options:
   -s, --size                      image size(defaut: 7456 MB for eMMC)
   -B, --BOOTSIZE                  BPI-BOOT partition size(default: 256 MB)
   -I, --IMGDISK                   IMG TYPE ('-sd' '-emmc' '-sd-emmc')
-  -V, --IMGVER                    IMG VERSION ('-demo' '-preview' '-beta') 
+  -V, --IMGVER                    IMG VERSION ('-demo' '-preview' '-beta')
   -h, --help                      Print usage
   -v, --version                   Print version information and quit
 
@@ -177,7 +177,7 @@ get_conffile() {
       if [ "x$FILE" == "x$BPICONF" ] ; then
         echo $U
         echo "OK!!\n"
-        break 
+        break
       fi
     done
   fi
@@ -965,7 +965,7 @@ bpi_migratefromimg() {
   release_loopdev
   #step 6: img to zip
   #cat ${IMGFILE} | pv | zip ${IMGFILE}.zip -
-  echo zip ${IMGFILE}.zip 
+  echo zip ${IMGFILE}.zip
   zip ${IMGFILE}.zip ${IMGFILE}
   #blue_led_off
   date
@@ -1071,7 +1071,7 @@ update_bpimode() {
 }
 
 
-bpi_migrate_main() 
+bpi_migrate_main()
 {
   if [ ! -f "${BPIFILE}" ] ; then
     download_index
@@ -1232,5 +1232,4 @@ shift #get rid of the '--'
 
 #step 1: main
 update_bpimode
-bpi_migrate_main 
-
+bpi_migrate_main

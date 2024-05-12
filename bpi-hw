@@ -32,7 +32,7 @@ BPIFILE="$HOME/.${BPICMD}.lst"
 #BPI-ROOT.lst
 #
 ## Hello from Google,
-## On Aug 31, 2016, we will discontinue serving content via 
+## On Aug 31, 2016, we will discontinue serving content via
 ## googledrive.com/host/[id] and the webpages will not be accessible anymore.
 #
 #BPIURL="https://googledrive.com/host/0B_YnvHgh2rwjVE10U3U0Q0NCdWM"
@@ -109,7 +109,7 @@ get_conffile() {
       if [ "x$FILE" == "x$BPICONF" ] ; then
         echo $U
         echo "OK!!\n"
-        break 
+        break
       fi
     done
   fi
@@ -445,7 +445,7 @@ bpi_hw_osdep() {
     . $OSDEPFILE
   else
     BPI_OS="xenial_mate"
-    echo "BPI_OS=$BPI_OS" > $OSDEPFILE 
+    echo "BPI_OS=$BPI_OS" > $OSDEPFILE
   fi
   BPI_OSDIR="$BPIDIR/run/$BPI_OS/$BOARD"
   if [ ! -d $BPI_OSDIR ] ; then
@@ -656,4 +656,3 @@ BPIOPT=$*
 
 #step 1: main
 bpi_hw_main
-

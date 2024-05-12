@@ -33,7 +33,7 @@ BPIFILE="$HOME/.${BPICMD}.lst"
 #BPI-ROOT.lst
 #
 ## Hello from Google,
-## On Aug 31, 2016, we will discontinue serving content via 
+## On Aug 31, 2016, we will discontinue serving content via
 ## googledrive.com/host/[id] and the webpages will not be accessible anymore.
 #
 #BPIURL="https://googledrive.com/host/0B_YnvHgh2rwjVE10U3U0Q0NCdWM"
@@ -124,7 +124,7 @@ get_conffile() {
       if [ "x$FILE" == "x$BPICONF" ] ; then
         echo $U
         echo "OK!!\n"
-        break 
+        break
       fi
     done
   fi
@@ -369,7 +369,7 @@ echo		"dd if=$DEVICE bs=1M count=$SIZE | pv | dd of=$IMGFILE bs=10M status=noxfe
 	sync;sync;sync
 }
 
-bpi_imagetodisk() 
+bpi_imagetodisk()
 {
 	short_usage
 if [ -f ${IMGFILE} ] ; then
@@ -397,7 +397,7 @@ echo "RUNTIME" "$MIN:$SEC"
 fi
 }
 
-bpi_disktoimage() 
+bpi_disktoimage()
 {
 	short_usage
 if [ -b ${DEVICE} ] ; then
@@ -457,7 +457,7 @@ update_copymode()
 }
 
 
-bpi_copy_main() 
+bpi_copy_main()
 {
 #check COPYMODE: imagetodisk / disktoimage / default
 	case ${COPYMODE} in
@@ -591,5 +591,4 @@ if [[ $SIZE == "" ]]; then SIZE=$3 ; fi
 #step 1: main
 COPYMODE=usage
 update_copymode
-bpi_copy_main 
-
+bpi_copy_main
